@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default navigation-clean-button header-color">
+  <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/">Welcome App</a>
+      </div>
+      <div class="nav navbar-default">
+          <ul class="nav navbar-nav flex-row">
+              <ng-template [ngIf]="!isAuthenticated()">
+              <li class="nav-item" routerLinkActive='active' ><a routerLink="login">Login</a></li>
+              </ng-template>
+              <ng-template [ngIf]="isAuthenticated()">
+              <li class="nav-item" routerLinkActive='active' ><a routerLink="home">Home</a></li>
+              <li class="nav-item" routerLinkActive='active' ><a style="cursor: pointer"  (click)="onLogout()">Logout</a></li>
+              </ng-template>
+          </ul>
+      </div>
+  </div>
+</nav>
